@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercícios em JavaScript</title>
+</head>
+
+<body>
+    <h1>Exercícios em JavaScript</h1>
+
+    <!-- Exercício 1: Conversão de temperatura -->
+    <h2>Exercício 1: Conversão de temperatura</h2>
+    <p>Temperatura em graus Celsius: 25</p>
+    <p>Temperatura em graus Fahrenheit: <span id="resultadoEx1"></span>°F</p>
+    <script>
+        const temperaturaCelsius = 25;
+        const temperaturaFahrenheit = (temperaturaCelsius * 9 / 5) + 32;
+        document.getElementById("resultadoEx1").textContent = temperaturaFahrenheit;
+    </script>
+
+    <!-- Exercício 2: Dia da semana -->
+    <h2>Exercício 2: Dia da semana</h2>
+    <p>Número do dia: 3</p>
+    <p>Dia da semana: <span id="resultadoEx2"></span></p>
+    <script>
+        const numeroDia = 3;
+        let diaDaSemana;
+        switch (numeroDia) {
+            case 1:
+                diaDaSemana = "Domingo";
+                break;
+            case 2:
+                diaDaSemana = "Segunda-feira";
+                break;
+            case 3:
+                diaDaSemana = "Terça-feira";
+                break;
+            case 4:
+                diaDaSemana = "Quarta-feira";
+                break;
+            case 5:
+                diaDaSemana = "Quinta-feira";
+                break;
+            case 6:
+                diaDaSemana = "Sexta-feira";
+                break;
+            case 7:
+                diaDaSemana = "Sábado";
+                break;
+            default:
+                diaDaSemana = "Número inválido. Digite um número de 1 a 7.";
+        }
+        document.getElementById("resultadoEx2").textContent = diaDaSemana;
+    </script>
+
+    <!-- Exercício 3: Verificar número positivo, negativo ou zero -->
+    <h2>Exercício 3: Verificar número positivo, negativo ou zero</h2>
+    <p>Número: -5</p>
+    <p>Status: <span id="resultadoEx3"></span></p>
+    <script>
+        const numeroVerificado = -5;
+        let statusNumero;
+        if (numeroVerificado > 0) {
+            statusNumero = "Positivo";
+        } else if (numeroVerificado < 0) {
+            statusNumero = "Negativo";
+        } else {
+            statusNumero = "Zero";
+        }
+        document.getElementById("resultadoEx3").textContent = statusNumero;
+    </script>
+
+    <!-- Exercício 4: Cálculo do custo final do carro -->
+    <h2>Exercício 4: Cálculo do custo final do carro</h2>
+    <p>Custo de fábrica do carro: R$ 20,000</p>
+    <p>Custo final ao consumidor: <span id="resultadoEx4"></span></p>
+    <script>
+        const custoFabricaCarro = 20000;
+        const percentagemDistribuidor = 0.28;
+        const impostos = 0.45;
+        const custoFinalCarro = custoFabricaCarro + (custoFabricaCarro * percentagemDistribuidor) + (custoFabricaCarro * impostos);
+        document.getElementById("resultadoEx4").textContent = `R$${custoFinalCarro.toFixed(2)}`;
+    </script>
+
+    <!-- Exercício 5: Cálculo do Índice de Massa Corporal (IMC) -->
+    <h2>Exercício 5: Cálculo do Índice de Massa Corporal (IMC)</h2>
+    <p>Altura: 1.75 metros</p>
+    <p>Peso: 70 quilogramas</p>
+    <p>Status: <span id="resultadoEx5"></span></p>
+    <script>
+        const alturaPessoa = 1.75; // Em metros
+        const pesoPessoa = 70; // Em quilogramas
+        const imc = pesoPessoa / (alturaPessoa ** 2);
+        let statusIMC;
+        if (imc < 18.5) {
+            statusIMC = "Você está abaixo da faixa de peso ideal.";
+        } else if (imc > 24.99) {
+            statusIMC = "Você está acima da faixa de peso ideal.";
+        } else {
+            statusIMC = "Você está dentro da faixa de peso ideal.";
+        }
+        document.getElementById("resultadoEx5").textContent = statusIMC;
+    </script>
+
+    <!-- Exercício 6: Calculadora com operação matemática -->
+    <h2>Exercício 6: Calculadora com operação matemática</h2>
+    <p>Número 1: 10</p>
+    <p>Número 2: 5</p>
+    <p>Operação: +</p>
+    <p>Resultado: <span id="resultadoEx6"></span></p>
+    <script>
+        const num1 = 10;
+        const num2 = 5;
+        const operacao = "+";
+        let resultado;
+        switch (operacao) {
+            case "+":
+                resultado = num1 + num2;
+                break;
+            case "-":
+                resultado = num1 - num2;
+                break;
+            case "*":
+                resultado = num1 * num2;
+                break;
+            case "/":
+                resultado = num1 / num2;
+                break;
+            default:
+                resultado = "Operação inválida. Use +, -, *, ou /.";
+        }
+        document.getElementById("resultadoEx6").textContent = resultado;
+    </script>
+
+    <!-- Exercício 7: Simulação de caixa eletrônico -->
+    <h2>Exercício 7: Simulação de caixa eletrônico</h2>
+    <p>Saldo inicial: R$ 1,000.00</p>
+    <p>Valor de saque: R$ 300.00</p>
+    <p>Saldo restante: <span id="resultadoEx7"></span></p>
+    <script>
+        const saldoInicial = 1000.00;
+        const valorSaque = 300.00;
+        const taxaSaque = 4.50;
+        let saldoRestante;
+        if (valorSaque > saldoInicial) {
+            saldoRestante = "Saldo insuficiente para o saque.";
+        } else if (valorSaque % 5 !== 0) {
+            saldoRestante = "O valor de saque deve ser múltiplo de 5.";
+        } else {
+            saldoRestante = saldoInicial - (valorSaque + taxaSaque);
+        }
+        document.getElementById("resultadoEx7").textContent = saldoRestante;
+    </script>
+
+    <!-- Exercício 8: Categoria do atleta -->
+    <h2>Exercício 8: Categoria do atleta</h2>
+    <p>Idade do atleta: 17 anos</p>
+    <p>Peso do atleta: 50 kg</p>
+    <p>Categoria: <span id="resultadoEx8"></span></p>
+    <script>
+        const idadeAtleta = 17;
+        const pesoAtleta = 50;
+        let categoriaAtleta;
+        if (idadeAtleta <= 12) {
+            categoriaAtleta = "Infantil";
+        } else if (idadeAtleta >= 13 && idadeAtleta <= 16) {
+            if (pesoAtleta <= 40) {
+                categoriaAtleta = "Juvenil leve";
+            } else {
+                categoriaAtleta = "Juvenil pesado";
+            }
+        } else if (idadeAtleta >= 17 && idadeAtleta <= 24) {
+            if (pesoAtleta <= 45) {
+                categoriaAtleta = "Sênior leve";
+            } else if (pesoAtleta <= 60) {
+                categoriaAtleta = "Sênior médio";
+            } else {
+                categoriaAtleta = "Sênior pesado";
+            }
+        } else {
+            categoriaAtleta = "Veterano";
+        }
+        document.getElementById("resultadoEx8").textContent = categoriaAtleta;
+    </script>
+
+    <!-- Exercício 9: Multa por excesso de velocidade -->
+    <h2>Exercício 9: Multa por excesso de velocidade</h2>
+    <p>Velocidade do carro: 85 Km/h</p>
+    <p>Mensagem: <span id="resultadoEx9"></span></p>
+    <script>
+        const velocidadeCarro = 85;
+        const velocidadePermitida = 80;
+        const valorMultaPorKm = 5;
+        if (velocidadeCarro > velocidadePermitida) {
+            const excessoVelocidade = velocidadeCarro - velocidadePermitida;
+            const valorMulta = excessoVelocidade * valorMultaPorKm;
+            document.getElementById("resultadoEx9").textContent = `Você foi multado em R$${valorMulta.toFixed(2)} por excesso de velocidade.`;
+        } else {
+            document.getElementById("resultadoEx9").textContent = "Velocidade dentro do limite permitido.";
+        }
+    </script>
+</body>
+
+</html>
